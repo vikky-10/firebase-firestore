@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Cloud Cafe</h1>
+
+    <div class="content">
+      <form id="add-cafe-form">
+        <input type="text" name="name" placeholder="Cafe name" />
+        <input type="text" name="city" placeholder="Cafe city" />
+        <button>Add Cafe</button>
+      </form>
+      <form id="search">
+        <input
+          type="search"
+          name="search"
+          id="searchBar"
+          placeholder="search by city"
+        />
+      </form>
+
+      <ul id="cafe-list"></ul>
+    </div>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAWLo6Tou_Fbb5VLHV0MU9ulqF2u8LiNJI",
+        authDomain: "firestore-demo-c79b1.firebaseapp.com",
+        projectId: "firestore-demo-c79b1",
+        storageBucket: "firestore-demo-c79b1.appspot.com",
+        messagingSenderId: "548610059645",
+        appId: "1:548610059645:web:bece2bb80d615339d7b014",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
